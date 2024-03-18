@@ -1,0 +1,90 @@
+<!-- 
+- This is a base for this tool.
+- It contain header, logo and some common line for the tool.
+
+* author: Bui Quang Phu
+* email: fixed-term.phu.buiquang@vn.bosch.com
+* modified date: 04/03/2024
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{%block title%}{%endblock%}</title>
+    <!--TITLE ICON-->
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='image/logo.png') }}"
+      sizes="16x16"
+    />
+    <!--LINK CSS-->
+    <!--CSS FOR ALL PAGE-->
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/common.css')}}"
+    />
+    <!--FONT AWSOME-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <!--DATEPICKER CSS-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css"
+      rel="stylesheet"
+    />
+    {%block css%}{%endblock%}
+  </head>
+  <body>
+    <header>
+      <div class="header-bg">
+        <img src="#" alt="Bosch wallpaper" />
+      </div>
+      <div class="header-body">
+        <div class="header-left">
+          <a href="#">
+            <img src="#" alt="logo Bosch" class="logo" />
+          </a>
+          <h1 class="header-title">{%block header%}{%endblock%}</h1>
+        </div>
+        <div class="header-middle">{%block navbar%}{%endblock%}</div>
+        <div class="header-right">
+          <button id="import-button">
+            <a href="#"> Import Excel</a>
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="main-page">
+      {%if error%}
+      <p class="notification" id="notification">
+        <strong>Error: </strong>{{error}}
+        <span id="close-notification"><i class="fa-solid fa-xmark"></i></span>
+      </p>
+      <script>
+        closeNotification = document.getElementById("close-notification");
+        notificationBar = document.getElementById("notification");
+
+        closeNotification.addEventListener("click", () => {
+          notificationBar.classList.add("hide");
+        });
+      </script>
+      {%endif%} {%block main%}{%endblock%}
+    </div>
+    <!--JAVASCRIPT-->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/split.js/dist/split.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
+    {%block javascript%}{%endblock%}
+  </body>
+</html>

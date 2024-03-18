@@ -1,0 +1,138 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.loader b {
+  display: block;
+  margin: 8px 0 0;
+  font-size: 24px;
+  line-height: 40px;
+}
+.vert2 {
+  animation: vert2 2s infinite ease-in-out;
+  transform-origin: center bottom;
+}
+
+.vert1 {
+  animation: vert1 2s infinite ease-in-out;
+  transform-origin: center bottom;
+}
+
+.horz {
+  animation: horz 2s infinite ease-in-out;
+  transform-origin: left center;
+}
+
+@keyframes horz {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  10% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+
+  80% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+
+  90% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes vert1 {
+  0% {
+    transform: scaleY(0) translateX(22px);
+    opacity: 0;
+  }
+
+  20% {
+    transform: scaleY(0) translateX(22px);
+    opacity: 0;
+  }
+
+  30% {
+    transform: scaleY(1) translateX(22px);
+    opacity: 1;
+  }
+
+  45% {
+    transform: scaleY(1) translateX(22px);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scaleY(1) translateX(0);
+    opacity: 1;
+  }
+
+  80% {
+    transform: scaleY(1) translateX(0);
+    opacity: 1;
+  }
+
+  90% {
+    transform: scaleY(0) translateX(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scaleY(0) translateX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes vert2 {
+  0% {
+    transform: scaleY(0) translateX(-22px);
+    opacity: 0;
+  }
+
+  40% {
+    transform: scaleY(0) translateX(-22px);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scaleY(1) translateX(0);
+    opacity: 1;
+  }
+
+  80% {
+    transform: scaleY(1) translateX(0);
+    opacity: 1;
+  }
+
+  90% {
+    transform: scaleY(0) translateX(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scaleY(0) translateX(0);
+    opacity: 0;
+  }
+}
+.hide {
+  display: none;
+}

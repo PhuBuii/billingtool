@@ -1,0 +1,136 @@
+.main-page {
+  height: 900px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.upload-box {
+  border: 1px solid var(--border-colour);
+  width: 957px;
+  height: 590px;
+  padding: 1%;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  top: 155px;
+}
+.file-input {
+  display: none;
+}
+.drag-area {
+  position: relative;
+  width: 920px;
+  height: 442px;
+  border: 2px dashed var(--filter-border-colour);
+  border-radius: var(--radius-value);
+  text-align: center;
+  background-color: var(--white-colour);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.drop-message span {
+  text-decoration: underline;
+  font-weight: 600;
+}
+.drop-message {
+  color: var(--filter-hover-colour);
+}
+
+.drag-area.dragover,
+.drag-area:hover {
+  border-color: var(--filter-focus-colour);
+}
+
+.drop-message.dragover,
+.drag-area:hover span {
+  color: var(--filter-focus-colour);
+}
+.btn-control {
+  display: flex;
+  justify-content: flex-end;
+}
+.btn-control button {
+  width: 202px;
+  height: 67px;
+  color: var(--white-colour);
+  border-radius: var(--radius-value);
+  font-size: 24px;
+}
+.btn-control button:hover {
+  font-weight: 600;
+}
+#import-btn {
+  background-color: var(--green-colour);
+  margin-right: 3%;
+}
+#cancel-btn {
+  background-color: var(--red-colour);
+}
+
+.file-area {
+  height: 96px;
+  padding: 2%;
+  border: 1px solid var(--border-colour);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-text-input);
+}
+.excel-file {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+}
+.excel-file i {
+  font-size: 40px;
+  margin-right: 5%;
+}
+.progress-bar {
+  width: 40%;
+  background-color: #ddd;
+  margin-right: 1%;
+}
+
+.progress {
+  width: 0;
+  height: 20px;
+  background-color: #4caf50;
+}
+
+.hide {
+  display: none;
+}
+#close-file:hover {
+  opacity: 0.5;
+}
+
+.date-form {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+input#start-date {
+  width: 81px;
+  height: 28px;
+  padding: 5px;
+  border: 1px solid var(--filter-border-colour);
+  border-radius: var(--radius-value);
+  color: var(--black-colour);
+  outline: none;
+  margin: 0;
+}
+.datepicker-months {
+  position: absolute;
+  top: 38vh;
+  left: 30.5vw;
+  background-color: white;
+  box-shadow: 0 0 1px black;
+}
